@@ -1,0 +1,12 @@
+.sidebar-menu li a .fa-angle-left,
+.sidebar-menu li .label, .sidebar-menu li .badge {
+	margin-top: -15px !important;
+}
+
+.content-wrapper, .right-side, .main-footer{
+	margin-right: 230px;
+	margin-left: 0px !important;
+}
+.main-sidebar{
+	right: 0;
+}
