@@ -16,12 +16,12 @@ class UsersSeeder extends Seeder
     {
         //
         $user = User::create([
-        	'name' => 'admin6', 
-        	'email' => 'admin6@gmail.com',
-        	'password' => bcrypt('123456')
+        	'name' => 'admin', 
+        	'email' => 'admin@gmail.com',
+        	'password' => bcrypt('admin@123')
         ]);
-  		$role = Role::create(['name' => 'Admin','guard_name'=>'web']);
-        // $role = Role::find(2);
+  		// $role = Role::create(['name' => 'Admin','guard_name'=>'web']);
+        $role = Role::find(1);
    
         $permissions = Permission::pluck('id')->all();
   

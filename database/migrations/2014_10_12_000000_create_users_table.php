@@ -24,6 +24,7 @@ class CreateUsersTable extends Migration
             $table->string('city')->nullable();
             $table->string('profileimage')->nullable();
             $table->string('status')->default('1')->nullable();
+            $table->string('isdelete')->default('0')->nullable();
             $table->rememberToken();
             $table->timestamps();
         });

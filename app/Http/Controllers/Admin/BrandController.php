@@ -76,7 +76,8 @@ class BrandController extends Controller
         $encryid = Crypt::decryptString($id);
         $brand = Brand::find($encryid);
         if($brand){
-          $brand->delete();
+            $brand->isdelete = 1;
+            $brand->save();
         }
         return redirect()->route('admin.brand')->with('success','Brand deleted successfully.');
 	}
@@ -84,7 +85,7 @@ class BrandController extends Controller
 	public function arraydata(Request $request)
     {
             $response = [];
-            $brand = Brand::all();
+            $brand = Brand::where('isdelete','0')->get();
             foreach ($brand as $n) {
                 $sub   = [];
                 $id    = $n->id;

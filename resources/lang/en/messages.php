@@ -18,9 +18,15 @@ return [
     'submit' => 'submit',
     'activate' => 'Activate',
     'copyright' => 'Copyright © 2020 Muutos. All rights reserved.',
+    'dashboard' => 'Dashboard',
+    'manage_inventory' => 'Manage Inventory',
+    'master' => 'Master',
+
+
 
     'setting' => [
-        'manage_setting' => 'Manage Setting',
+        'manage' => 'Manage Setting',
+        'edit' => 'Edit Setting',
         'admin_email' => 'Admin Email',
         'support_email' => 'Support Email',
         'smtp_driver' => 'SMTP Driver',
@@ -29,7 +35,6 @@ return [
         'smtp_host' => 'SMTP host',
         'smtp_port' => 'SMTP Port',
         'smtp_encryption' => 'SMTP Encryption',
-        'edit_setting' => 'Edit Setting',
         'general' => 'GENERAL',
         'smtp' => 'SMTP',
     ],

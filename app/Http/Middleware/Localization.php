@@ -15,16 +15,16 @@ class Localization
      */
     public function handle($request, Closure $next)
     {        
-        if(Auth::check()){
-            if(Auth::user()->localization){
-               \App::setlocale(Auth::user()->localization); 
-            }
-        }
-        // dd(Auth::user()->localization);   
-
-        // if(\Session::has('locale')){
-        //     \App::setlocale(\Session::get('locale'));
+        // if(Auth::check()){
+        //     if(Auth::user()->localization){
+        //        \App::setlocale(Auth::user()->localization); 
+        //     }
         // }
+        // dd($request->all());   
+
+        if(\Session::has('locale')){
+            \App::setlocale(\Session::get('locale'));
+        }
         return $next($request);
     }
 }

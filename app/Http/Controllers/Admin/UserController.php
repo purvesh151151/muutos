@@ -108,7 +108,8 @@ class UserController extends Controller
         $encryid = Crypt::decryptString($id);
         $user = User::find($encryid);
         if($user){
-          $user->delete();
+            $user->isdelete = 1;
+            $user->save();
         }
         return redirect()->route('admin.user')->with('success','Customer deleted successfully.');
 	}
@@ -119,7 +120,7 @@ class UserController extends Controller
             $user = User::all();
             $user = User::whereHas('roles', function ($query) {
                 $query->where('name', ['user']);
-            })->get();
+            })->where('isdelete','0')->get();
             foreach ($user as $n) {
                 $sub   = [];
                 $id    = $n->id;
@@ -151,8 +152,7 @@ class UserController extends Controller
                     }
                 $sub[] = $action;
 
-                // hiddendata
-                $sub[] = $n->lastname;
+                
                 
 
                 $response[] = $sub;
@@ -202,7 +202,7 @@ class UserController extends Controller
             $user->profileimage = isset($path) ? $path : '';
         }
         $user->save();
-        return redirect()->route('admin.user')->with('success','Vendor Profile updated successfully.');
+        return redirect()->back()->with('success','Profile updated successfully.');
     }
 
 
@@ -247,7 +247,7 @@ class UserController extends Controller
         }else{
             return redirect()->route('admin.home.login');
         }
-        return redirect()->route('admin.user.changepassword.success')->with("success","Password change successfully.");
+        return redirect()->back()->with("success","Password change successfully.");
         // return view('frontend.user.changepassword');
     }
 

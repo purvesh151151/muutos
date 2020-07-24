@@ -18,6 +18,7 @@ class CreateBrandsTable extends Migration
             $table->string('name')->unique();
             $table->string('brandlogo')->nullable();
             $table->string('status')->default('1')->nullable();
+            $table->string('isdelete')->default('0')->nullable();
             $table->timestamps();
         });
     }

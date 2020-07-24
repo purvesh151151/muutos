@@ -112,7 +112,8 @@ class VendorController extends Controller
         $encryid = Crypt::decryptString($id);
         $user = User::find($encryid);
         if($user){
-          $user->delete();
+            $user->isdelete = 1;
+            $user->save();
         }
         return redirect()->route('admin.vendor')->with('success','Vendor deleted successfully.');
 	}
@@ -123,7 +124,7 @@ class VendorController extends Controller
             $user = User::all();
             $user = User::whereHas('roles', function ($query) {
                 $query->where('name', ['vendor']);
-            })->get();
+            })->where('isdelete','0')->get();
             foreach ($user as $n) {
                 $sub   = [];
                 $id    = $n->id;
@@ -154,10 +155,6 @@ class VendorController extends Controller
                         $sub[] = '<a data-toggle="tooltip" title="click here to active" style="color:red" onclick="return confirm(`' . $verified_url . '`,`Are you sure you want to activate this vendor ?`)"  href="#"><label class="right badge badge-danger"  style="background-color:red">In-Active</label></a>' . ' ';
                     }
                 $sub[] = $action;
-
-                // hiddendata
-                $sub[] = $n->lastname;
-                
 
                 $response[] = $sub;
             }

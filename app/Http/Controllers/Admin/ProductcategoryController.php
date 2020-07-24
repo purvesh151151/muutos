@@ -77,7 +77,8 @@ class ProductcategoryController extends Controller
         $encryid = Crypt::decryptString($id);
         $productcategory = Productcategory::find($encryid);
         if($productcategory){
-          $productcategory->delete();
+          $productcategory->isdelete = 1;
+          $productcategory->save();
         }
         return redirect()->route('admin.productcategory')->with('success','Product Category deleted successfully.');
 	}
@@ -85,7 +86,7 @@ class ProductcategoryController extends Controller
 	public function arraydata(Request $request)
     {
             $response = [];
-            $productcategory = Productcategory::all();
+            $productcategory = Productcategory::where('isdelete','0')->get();
             foreach ($productcategory as $n) {
                 $sub   = [];
                 $id    = $n->id;

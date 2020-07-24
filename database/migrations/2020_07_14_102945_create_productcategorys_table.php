@@ -19,9 +19,13 @@ class CreateProductcategorysTable extends Migration
             $table->string('description')->nullable();
             $table->string('categoryimage')->nullable();
             $table->string('status')->default('1')->nullable();
+            $table->string('isdelete')->default('0')->nullable(); 
             $table->timestamps();
         });
     }
+
+    // 0 = not delete
+    // 1 = delete
 
     /**
      * Reverse the migrations.

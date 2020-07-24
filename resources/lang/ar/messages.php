@@ -19,8 +19,12 @@ return [
     'activate' => 'تفعيل',
     'copyright' => 'حقوق النشر © 2020 Muutos. كل الحقوق محفوظة',
 
+    'dashboard' => 'لوحة القيادة',
+    'manage_inventory' => 'إدارة المخزون',
+    'master' => 'رئيس',
+
     'setting' => [
-        'manage_setting' => 'إدارة الإعداد',
+        'manage' => 'إدارة الإعداد',
         'admin_email' => 'البريد الإلكتروني للمشرف',
         'support_email' => 'البريد الإلكتروني للدعم',
         'smtp_driver' => 'سائق SMTP',
@@ -29,25 +33,25 @@ return [
         'smtp_host' => 'مضيف SMTP',
         'smtp_port' => 'منفذ SMTP',
         'smtp_encryption' => 'تشفير SMTP',
-        'edit_setting' => 'وضع تحرير',
+        'edit' => 'وضع تحرير',
         'general' => 'جنرال لواء',
         'smtp' => 'SMTP',
     ],
 
     'role' => [
-        'manage_role' => 'إدارة الدور',
-        'add_role' => 'إضافة دور',
+        'manage' => 'إدارة الدور',
+        'add' => 'إضافة دور',
         'title' => "عنوان",  
         'created' => "خلقت",
         'permission' => 'الإذن',
-        'edit_role' => 'تحرير الدور',
+        'edit' => 'تحرير الدور',
     ],
 
 
     'user' => [
-        'manage_customer' => 'إدارة العميل',
-        'add_customer' => 'إضافة عميل',
-        'edit_customer' => 'تحرير العميل',
+        'manage' => 'إدارة العميل',
+        'add' => 'إضافة عميل',
+        'edit' => 'تحرير العميل',
         'firstname' => "الاسم الاول",  
         'lastname' => "الكنية",
         'email' => "البريد الإلكتروني",
@@ -60,9 +64,9 @@ return [
     ],
 
     'productcategory' => [
-        'manage_category' => 'إدارة الفئة',
-        'add_category' => 'إضافة فئة',
-        'edit_category' => 'تحرير الفئة',
+        'manage' => 'إدارة الفئة',
+        'add' => 'إضافة فئة',
+        'edit' => 'تحرير الفئة',
         'name' => "اسم",
         'description' => "وصف",
         'categoryimage' => "صورة",
@@ -70,9 +74,9 @@ return [
     ],
 
     'vendor' => [
-        'manage_customer' => 'إدارة البائع',
-        'add_customer' => 'إضافة بائع',
-        'edit_customer' => 'تحرير البائع',
+        'manage' => 'إدارة البائع',
+        'add' => 'إضافة بائع',
+        'edit' => 'تحرير البائع',
         'firstname' => "الاسم الاول",  
         'lastname' => "الكنية",
         'company' => "اسم الشركة",
@@ -83,6 +87,30 @@ return [
         'address' => "عنوان",
         'profile' => "صورة الملف الشخصي",
         'status' => "الحالة",
+    ],
+
+
+    'brand' => [
+        'manage' => 'إدارة العلامة التجارية',
+        'add' => 'أضف علامة تجارية',
+        'edit' => 'تحرير العلامة التجارية',
+        'name' => "اسم",
+        'description' => "وصف",
+        'image' => "صورة",
+        'status' => "الحالة",
+    ],
+
+    'product' => [
+        'manage' => "إدارة المنتج",
+        'add' => "أضف منتج",
+        'edit' => "تحرير المنتج",
+        'name' => "اسم",
+        'description' => "وصف",
+        'price' => "السعر",
+        'detail' => "تفاصيل",
+        'image' => "صورة",
+        'status' => "الحالة",
+        'brand' => "العلامة التجارية",
     ],
 
 
